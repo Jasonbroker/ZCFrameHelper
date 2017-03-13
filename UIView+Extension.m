@@ -19,19 +19,9 @@
 
 - (CGFloat)x
 {
-    return self.frame.origin.x;
+    return CGRectGetMinX(self.frame);
 }
 
-- (void)setX_2:(CGFloat)x_2
-{
-    self.x_2 = x_2;
-}
-
-
-- (CGFloat)x_2
-{
-    return  self.x * 0.5;
-}
 
 ///**************************************  y      **************************************
 - (void)setY:(CGFloat)y
@@ -46,15 +36,6 @@
     return self.frame.origin.y;
 }
 
-- (void)setY_2:(CGFloat)y_2
-{
-    self.y_2 = y_2;
-}
-
-- (CGFloat)y_2
-{
-    return self.y * 0.5;
-}
 ///**************************************  width      **************************************
 - (void)setWidth:(CGFloat)width
 {
@@ -123,7 +104,7 @@
 
 - (CGSize)size_2
 {
-    return CGSizeMake(self.x_2, self.y_2);
+    return CGSizeMake(CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
 }
 
 ///**************************************  centerX      **************************************
@@ -171,11 +152,6 @@
 {
     return CGRectMake(0, 0, self.width_2, self.height_2);
 }
-
-//- (CGRect)frameInCenterWithWidth:(CGRect)givenWidth AndHeight:(CGRect)givenHeight
-//{
-//    return CGRectMake((self.width - givenWidth) *0.5, (self.height - givenHeight)*0.5,, width, height);
-//}
 
 - (CGRect)frameForCenter:(CGPoint)center width:(CGFloat)width height:(CGFloat)height
 {
