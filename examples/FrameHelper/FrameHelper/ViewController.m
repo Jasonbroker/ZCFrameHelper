@@ -17,6 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UIButton *btn = [[UIButton alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:btn];
+    [btn addTarget:self action:@selector(press) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    [self.view addSubview:button];
+    button.backgroundColor = [UIColor greenColor];
+    button.userInteractionEnabled = NO;
+    
+}
+
+- (void)press {
+    self.view.backgroundColor = [UIColor redColor];
 }
 
 
